@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/firebase/firebase-tools/master/schema/blueprint.schema.json",
+  "entities": {
+    "photos": {
+      "title": "Photo Item",
+      "description": "Portfolio wedding photos stored in Firebase database",
+      "properties": {
+        "id": { "type": "string" },
+        "image": { "type": "string" },
+        "caption": { "type": "string" },
+        "moment": { "type": "string" },
+        "coupleName": { "type": "string" },
+        "date": { "type": "string" },
+        "featured": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "image", "createdAt"]
+    },
+    "inquiries": {
+      "title": "Client Inquiry",
+      "description": "Wedding inquiries submitted by prospective clients with auto-reply tracking",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "weddingDate": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "read": { "type": "boolean" },
+        "autoReplied": { "type": "boolean" },
+        "autoReplySentAt": { "type": "number" }
+      },
+      "required": ["id", "name", "email", "message", "createdAt"]
+    },
+    "settings": {
+      "title": "Site Settings",
+      "description": "Global website configuration, contact details, and auto-reply templates",
+      "properties": {
+        "siteName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "autoReplyEnabled": { "type": "boolean" },
+        "autoReplySubject": { "type": "string" },
+        "autoReplyMessage": { "type": "string" },
+        "autoReplyPdfUrl": { "type": "string" }
+      }
+    }
+  }
+}
